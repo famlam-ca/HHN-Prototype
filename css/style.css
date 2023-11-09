@@ -1,0 +1,1021 @@
+/* ======================================== Debug ======================================== */
+
+/* * {
+  border: 1px solid red;
+} */
+
+/* ======================================== Root Vars ======================================== */
+:root {
+  /* Colors */
+  --color-primary: #81c3fd;
+  --color-alert: #ff7782;
+  --color-success: #41f1b6;
+  --color-warning: #ffbb55;
+  --color-white: #181a1b;
+  --color-info-dark: #7d8da1;
+  --color-info-light: #dce1eb;
+  --color-dark: #edeffd;
+  --color-light: rgba(0, 0, 0, 0.4);
+  --color-primary-variant: #7480ec;
+  --color-dark-variant: #a3bdcc;
+  --color-background: #0b0c0d;
+
+  /* Button colors */
+  --color-primary-button: #006600;
+  --color-secondary-button: #000000;
+
+  /* Boarders */
+  --card-border-radius: 2rem;
+  --border-radius-1: 0.4rem;
+  --border-radius-2: 0.8rem;
+  --border-radius-3: 1.2rem;
+
+  /* Padding */
+  --card-padding: 1.8rem;
+  --padding-1: 1.2rem;
+
+  /* Shadow */
+  --box-shadow: 0 2rem 3rem var(--color-light);
+  --box-shadow-btn: 0 0 2rem var(--color-secondary-button);
+}
+
+/* Colors Dark theme */
+.light-theme-variables {
+  /* Colors */
+  --color-background: #f6f6f9;
+  --color-white: #fff;
+  --color-dark: #363949;
+  --color-dark-variant: #677483;
+  --color-light: rgba(132, 139, 200, 0.18);
+
+  /* Shadow */
+  --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  appearance: none;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 14px;
+}
+
+/* Body */
+body {
+  background: var(--color-background);
+  font-family: "Segoe UI Variable", sans-serif;
+  font-size: 0.88rem;
+  width: 100dvw;
+  height: 100dvh;
+  user-select: none;
+  overflow-x: hidden;
+  color: var(--color-dark);
+}
+
+/* ======================================== Reusable ======================================== */
+
+/* Remove styling from all buttons */
+button {
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Card img wrapper */
+.img-wrapper {
+  display: inline-block;
+  overflow: hidden;
+  filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.5));
+}
+
+/* Card img transition */
+.img-wrapper {
+  transition: all 0.2s ease;
+  vertical-align: middle;
+}
+
+/* ======================================== Sidebar ======================================== */
+
+/* Sidebar */
+aside {
+  height: 100dvh;
+}
+
+/* Sidebar top */
+aside .top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1.4rem 1.4rem 0;
+}
+
+/* Sidebar logo */
+aside .logo {
+  display: flex;
+  gap: 0.8rem;
+}
+
+/* Sidebar logo img */
+aside .logo img {
+  width: 4rem;
+  height: 4rem;
+}
+
+/* Center h2 */
+aside .logo h2 {
+  display: flex;
+  align-items: center;
+}
+
+aside .logo h2 span {
+  color: var(--color-primary);
+}
+
+/* SIdebar close */
+aside .close {
+  display: none;
+}
+
+/* Sidebar */
+aside .sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 86dvh;
+  position: relative;
+  top: 3rem;
+  white-space: nowrap;
+}
+
+/* Sidebar h3 (text) */
+aside h3 {
+  font-weight: 500;
+}
+
+/* Sidebar link */
+aside .sidebar a {
+  display: flex;
+  color: var(--color-info-dark);
+  margin-left: 2rem;
+  gap: 1rem;
+  align-items: center;
+  position: relative;
+  height: 3.7rem;
+  transition: all 0.2s ease;
+  bottom: 2rem;
+  width: 100%;
+}
+aside .sidebar button {
+  display: flex;
+  color: var(--color-info-dark);
+  margin-left: 2rem;
+  gap: 1rem;
+  align-items: center;
+  position: relative;
+  height: 3.7rem;
+  transition: all 0.2s ease;
+  bottom: 2rem;
+  width: 100%;
+}
+
+/* Sidebar text */
+aside .sidebar a span {
+  font-size: 1.6rem;
+  transition: all 0.2s ease;
+}
+aside .sidebar button span {
+  font-size: 1.6rem;
+  transition: all 0.2s ease;
+}
+
+/* Sidebar link when active */
+aside .sidebar a.active {
+  background: var(--color-light);
+  color: var(--color-primary);
+  margin-left: 0;
+}
+
+/* Sidebar accent bar when active */
+aside .sidebar a.active::before {
+  content: "";
+  width: 6px;
+  height: 100%;
+  background: var(--color-primary);
+}
+
+/* Sidebar text when active */
+aside .sidebar a.active span {
+  color: var(--color-primary);
+  margin-left: calc(1rem - 3px);
+}
+
+/* Sidebar link on hover */
+aside .sidebar a:hover {
+  color: var(--color-primary);
+}
+aside .sidebar button:hover {
+  color: var(--color-primary);
+}
+
+/* Sidebar text on hover */
+aside .sidebar a:hover span:first-child {
+  margin-left: 1rem;
+}
+aside .sidebar button:hover span:first-child {
+  margin-left: 1rem;
+}
+
+/* Server alert count */
+aside .sidebar .server-alert {
+  background: var(--color-alert);
+  color: var(--color-dark);
+  padding: 2px 10px;
+  font-size: 11px;
+  border-radius: var(--border-radius-1);
+}
+
+/* Sidebar footer */
+aside .sidebar .sidebar-footer {
+  margin-top: 1.8rem;
+}
+
+/* Sidebar footer line */
+aside .sidebar .sidebar-footer-line {
+  margin-bottom: 1.8rem;
+  align-self: center;
+  border-top: 3px solid var(--color-primary);
+  border-radius: 1rem;
+  width: 80%;
+}
+
+/* Dropdown */
+aside .sidebar .dropdown {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Dropdown container */
+aside .sidebar .dropdown-container {
+  display: none;
+  padding-top: 20px;
+  margin-bottom: 3rem;
+  margin-left: 1rem;
+  height: 250px;
+  overflow-x: hidden;
+}
+
+/* Dropdown caret */
+aside .sidebar .dropdown-btn .caret-down {
+  transition: all 0.2s ease;
+}
+
+/* Dropdown caret when active */
+aside .sidebar .dropdown-btn.dropdown-active .caret-down {
+  rotate: -90deg;
+}
+
+/* ======================================== Main ======================================== */
+
+/* Main */
+main {
+  margin-top: 1.4rem;
+}
+
+/* Summary */
+main .summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+}
+
+/* Summary cards */
+main .summary > div {
+  background: var(--color-white);
+  padding: var(--card-padding);
+  border-radius: var(--card-border-radius);
+  margin-top: 1rem;
+  box-shadow: var(--box-shadow);
+  transition: all 0.2s ease;
+}
+
+/* Summary on hover */
+main .summary > div:hover {
+  box-shadow: none;
+}
+
+/* Summary icons */
+main .summary > div span {
+  padding: 0.5rem;
+  border-radius: 50%;
+  color: var(--color-white);
+  font-size: 2rem;
+}
+
+/* Summary cpu-usage */
+main .summary > div.cpu-usage span {
+  background: var(--color-primary);
+}
+
+/* Summary memory-usage */
+main .summary > div.memory-usage span {
+  background: var(--color-alert);
+}
+
+/* Summary disk-usage */
+main .summary > div.disk-usage span {
+  background: var(--color-success);
+}
+
+/* Summary card middle */
+main .summary > div .middle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Summary h3 */
+main .summary h3 {
+  margin: 1rem 0 0.6rem;
+  font-size: 1rem;
+}
+
+/* Summary usage visual */
+main .summary .usage {
+  position: relative;
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+}
+
+/* SUmmary usage visual svg */
+main .summary svg {
+  width: 7rem;
+  height: 7rem;
+}
+
+/* Summary usage visual circles */
+main .summary svg circle {
+  fill: none;
+  stroke: var(--color-primary);
+  stroke-width: 14;
+  stroke-linecap: round;
+  transform: translate(5px, 5px);
+}
+
+/* Summary usage visual circle cpu-usage */
+main .summary .cpu-usage svg circle {
+  stroke-dashoffset: -35;
+  stroke-dasharray: 200;
+}
+
+/* Summary usage visual circle memory-usage */
+main .summary .memory-usage svg circle {
+  stroke-dashoffset: -525;
+  stroke-dasharray: 200;
+}
+
+/* Summary usage visual circle disk-usage */
+main .summary .disk-usage svg circle {
+  stroke-dashoffset: -520;
+  stroke-dasharray: 200;
+}
+
+main .summary .usage .number {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Summary refresh time */
+main .summary small {
+  margin-top: 1.3rem;
+  display: block;
+}
+
+/* Server states */
+main .servers {
+  margin-top: 2rem;
+}
+
+/* Server states title */
+main .servers h2 {
+  margin-bottom: 0.8rem;
+}
+
+/* Server state table */
+main .servers table {
+  background: var(--color-white);
+  width: 100%;
+  border-radius: var(--card-border-radius);
+  padding: var(--card-padding);
+  text-align: center;
+  box-shadow: var(--box-shadow);
+  transition: all 0.2 ease;
+}
+
+/* Server state table on hover*/
+main .servers table:hover {
+  box-shadow: none;
+}
+
+/* Server state content */
+main table tbody td {
+  height: 2.8rem;
+  border-bottom: 1px solid var(--color-light);
+  color: var(--color-dark-variant);
+}
+
+/* Server state remove last child border */
+main table tbody tr:last-child td {
+  border: none;
+}
+
+/* Server state show all */
+main .servers a {
+  text-align: center;
+  display: block;
+  margin: 1rem auto;
+  color: var(--color-primary);
+}
+
+/* Right column */
+.right {
+  margin-top: 1.4rem;
+}
+
+/* Right column top */
+.right .top {
+  display: flex;
+  justify-content: end;
+  gap: 2rem;
+}
+
+/* Right column sidebar toggle */
+.right .top button {
+  display: none;
+}
+
+/* Theme toggle */
+.right .theme-toggle {
+  background: var(--color-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 1.6rem;
+  width: 4.2rem;
+  cursor: pointer;
+  border-radius: var(--border-radius-1);
+}
+
+/* Theme toggle indiv */
+.right .theme-toggle span {
+  font-size: 1.2rem;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Theme toggle when active */
+.right .theme-toggle span.active {
+  background: var(--color-primary);
+  color: white;
+  border-radius: var(--border-radius-1);
+}
+
+/* Right column profile photo */
+.right .top .profile {
+  display: flex;
+  gap: 2rem;
+  text-align: right;
+}
+
+/* Recent logs */
+.right .recent-logs {
+  margin-top: 1rem;
+}
+
+/* Recent logs header */
+.right .recent-logs h2 {
+  margin-bottom: 0.8rem;
+}
+
+/* Recent logs card */
+.right .recent-logs .logs {
+  background: var(--color-white);
+  padding: var(--card-padding);
+  border-radius: var(--card-border-radius);
+  box-shadow: var(--box-shadow);
+  transition: all 0.2s ease;
+}
+
+/* Recent logs card on hover */
+.right .recent-logs .logs:hover {
+  box-shadow: none;
+}
+
+/* Recent logs indiv */
+.right .recent-logs .logs .log {
+  display: grid;
+  grid-template-columns: 2.6rem auto;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Remove margin from last child */
+.right .recent-logs .logs .log:last-child {
+  margin-bottom: 0;
+}
+
+.right .configs {
+  margin-top: 2rem;
+}
+
+/* Configs title */
+.right .configs h2 {
+  margin-bottom: 0.8rem;
+}
+
+/* Configs indiv */
+.right .configs .item {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background: var(--color-white);
+  gap: 1rem;
+  margin-bottom: 0.7rem;
+  padding: 1.4rem var(--card-padding);
+  border-radius: var(--border-radius-3);
+  box-shadow: var(--box-shadow);
+  transition: all 0.2s ease;
+}
+
+/* Configs indiv on hover */
+.right .configs .item:hover {
+  box-shadow: none;
+}
+
+/* Configs img */
+.right .configs .item img {
+  max-width: 6rem;
+  vertical-align: middle;
+}
+
+/* Configs h3 */
+.right .configs .item h3 {
+  margin-bottom: 1rem;
+}
+
+/* Configs download */
+.right .configs .item .info .download {
+  margin-top: 10rem;
+  background: var(--color-primary);
+  color: var(--color-dark);
+  padding: 8px 12px;
+  border-radius: var(--border-radius-1);
+  transition: all 0.2s ease;
+}
+
+/* Configs download on hover */
+.right .configs .item .info .download:hover {
+  background: var(--color-secondary-button);
+  box-shadow: var(--box-shadow-btn);
+  color: white;
+}
+
+/* TrueNas activity */
+.right .uploads {
+  margin-top: 2rem;
+}
+
+/* TrueNAS activity title */
+.right .uploads h2 {
+  margin-bottom: 0.8rem;
+}
+
+/* TrueNAS activity indiv */
+.right .uploads .item {
+  background: var(--color-white);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.7rem;
+  padding: 1.4rem var(--card-padding);
+  border-radius: var(--border-radius-3);
+  box-shadow: var(--box-shadow);
+  transition: all 0.2s ease;
+}
+
+/* TrueNAS activity indiv on hover */
+.right .uploads .item:hover {
+  box-shadow: none;
+}
+
+/* TrueNAS activity indiv icon */
+.right .uploads .item .icon {
+  padding: 0.6rem;
+  color: var(--color-white);
+  border-radius: 50%;
+  display: flex;
+}
+
+/* recent-upload icon */
+.right .uploads .item.recent-upload .icon {
+  background: var(--color-success);
+}
+
+/* recent-download icon */
+.right .uploads .item.recent-download .icon {
+  background: var(--color-alert);
+}
+
+/* Upload file */
+.right .uploads .upload-file {
+  background: transparent;
+  border: 2px dashed var(--color-primary);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Upload file content on hover */
+.right .uploads .upload-file:hover {
+  background-color: rgba(2, 56, 126, 0.1);
+  color: var(--color-dark);
+}
+
+/* Upload file content */
+.right .uploads .upload-file div {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+/* Upload file font */
+.right .uploads .upload-file div h3 {
+  font-weight: 600;
+}
+
+/* ======================================== Server Manager ======================================== */
+
+/* Server manager iframe */
+.srvmngr {
+  display: block;
+  border: none;
+  border-radius: var(--border-radius-2);
+  margin-top: 1rem;
+  height: calc(100dvh - 5rem);
+  width: 100%;
+}
+
+/* ======================================== Login ======================================== */
+
+/* Login wrapper for page center */
+.login-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Login form wrapper */
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 500px;
+  height: 440px;
+  background: var(--color-white);
+  border-radius: var(--border-radius-2);
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+  transition: height 0.2s ease;
+}
+
+/* Change wrapper height when active */
+.wrapper.active {
+  height: 520px;
+}
+
+/* Login form size */
+.wrapper .form-box {
+  width: 100%;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+/* Login form */
+.wrapper .form-box.login {
+  transition: transform 0.18s ease;
+  transform: translateX(0);
+}
+
+/* Move login off form */
+.wrapper.active .form-box.login {
+  transition: none;
+  transform: translateX(-600px);
+}
+
+/* Register form */
+.wrapper .form-box.register {
+  position: absolute;
+  transition: none;
+  transform: translateX(600px);
+}
+
+/* Move register onto form */
+.wrapper.active .form-box.register {
+  transition: transform 0.18s ease;
+  transform: translateX(0);
+}
+
+/* Login form title */
+.form-box h2 {
+  font-size: 2em;
+  color: var(--color-dark);
+  text-align: center;
+}
+
+/* Login form inputs */
+.input-box {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  border-bottom: 2px solid var(--color-primary);
+  margin: 30px 0;
+}
+
+/* Input labels */
+.input-box label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  font-size: 1em;
+  color: var(--color-dark);
+  font-weight: 500;
+  pointer-events: none;
+  transition: 0.2s ease;
+}
+
+/* Input on focus */
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+  top: -5px;
+}
+
+/* Input styling */
+.input-box input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  color: var(--color-dark);
+  font-weight: 600;
+  padding: 0 35px 0 5px;
+}
+
+/* Input icon */
+.input-box .icon {
+  position: absolute;
+  right: 8px;
+  font-size: 1.2em;
+  color: var(--color-dark);
+  line-height: 57px;
+}
+
+/* Remember me/forgot pass styling */
+.remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9em;
+  color: var(--color-dark);
+  font-weight: 500;
+  margin: -15px 0 15px;
+}
+
+/* Tick box styling */
+.remember-forgot label input {
+  accent-color: var(--color-primary);
+  margin-right: 3px;
+}
+
+/* Forgot pass styling */
+.remember-forgot a {
+  color: var(--color-dark);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+/* Forgot pass on hover */
+.remember-forgot a:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+/* T&C underline */
+.remember-forgot a.TaC {
+  text-decoration: underline;
+}
+
+/* Login button */
+.btn {
+  background-color: var(--color-primary);
+  /* background-color: var(--color-primary-button); */
+  color: var(--color-dark);
+  width: 100%;
+  height: 45px;
+  border-radius: var(--border-radius-1);
+  font-size: 1em;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+/* Login */
+.login-register .btn {
+  background: transparent;
+}
+
+/* Link button on hover */
+.btn:hover {
+  background-color: var(--color-secondary-button);
+}
+
+/* Register link */
+.login-register {
+  font-size: 0.9em;
+  color: var(--color-dark);
+  text-align: center;
+  font-weight: 500;
+  margin: 25px 0 10px;
+  border: 1px solid var(--color-primary);
+  border-radius: var(--border-radius-1);
+}
+
+/* Register link styling */
+.login-register button a {
+  color: var(--color-dark);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* ======================================== Scrollbar ======================================== */
+
+/* Scrollbar width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Scrollbar Track */
+::-webkit-scrollbar-track {
+  border-radius: var(--border-radius-1);
+}
+
+/* Scrollbar Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 8px;
+}
+
+/* Scrollbar on Hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(129, 195, 253, 0.8);
+}
+
+.container {
+  display: grid;
+  width: 99%;
+  margin: 0 auto;
+  margin-left: 0;
+  gap: 1.8rem;
+  grid-template-columns: 14rem auto 23rem;
+}
+
+/* Card img wrapper */
+.img-wrapper {
+  display: inline-block;
+  overflow: hidden;
+  filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.5));
+}
+
+/* Card img */
+.row-content img {
+  max-width: 10rem;
+  vertical-align: middle;
+}
+
+/* Card img transition */
+.img-wrapper img {
+  transition: all 0.2s ease;
+  vertical-align: middle;
+}
+
+/* Card img on hover */
+.img-wrapper img:focus,
+.img-wrapper img:hover {
+  transform: scale(0.8);
+  border-radius: 5rem;
+  box-shadow: var(--box-shadow);
+}
+
+/* Link styling */
+a {
+  color: var(--color-dark);
+}
+
+/* Img styling */
+img {
+  display: block;
+  width: 100%;
+}
+
+/* H1 styling */
+h1 {
+  font-weight: 800;
+  font-size: 1.8rem;
+}
+
+/* H2 styling */
+h2 {
+  font-size: 1.4rem;
+}
+
+/* H3 styling */
+h3 {
+  font-size: 0.87rem;
+}
+
+/* H4 styling */
+h4 {
+  font-size: 0.8rem;
+}
+
+/* H5 styling */
+h5 {
+  font-size: 0.77rem;
+}
+
+/* Small text */
+small {
+  font-size: 0.75rem;
+}
+
+/* Profile photo */
+.profile-photo {
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+/* Darker text */
+.text-muted {
+  color: var(--color-info-dark);
+}
+
+/* P styling */
+p {
+  color: var(--color-dark-variant);
+}
+
+/* B styling */
+b {
+  color: var(--color-dark);
+}
+
+/* Primary elements */
+.primary {
+  color: var(--color-primary);
+}
+
+/* Alert elements */
+.alert {
+  color: var(--color-alert);
+}
+
+/* Success elements */
+.success {
+  color: var(--color-success);
+}
+
+/* Warning elements */
+.warning {
+  color: var(--color-warning);
+}

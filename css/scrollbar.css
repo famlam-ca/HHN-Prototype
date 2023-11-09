@@ -1,0 +1,31 @@
+/* Colors */
+:root {
+  --text-color: #e8e6e3;
+  --accent-color: #82c3fd;
+  --main-dgray: #0b0c0d;
+  --bg-gray: #181a1b;
+  --content-lgray: rgb(42, 45, 47);
+  --pbutton: rgb(0, 102, 0);
+  --sbutton: rgb(0, 0, 0);
+}
+
+/* Scrollbar width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Scrollbar Track */
+::-webkit-scrollbar-track {
+  border-radius: 8px;
+}
+
+/* Scrollbar Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+  border-radius: 8px;
+}
+
+/* Scrollbar on Hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(2, 55, 124, 0.8);
+}

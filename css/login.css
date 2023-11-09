@@ -1,0 +1,199 @@
+/* Colors */
+:root {
+  --text-color: #e8e6e3;
+  --accent-color: #82c3fd;
+  --main-dgray: #0b0c0d;
+  --bg-gray: #181a1b;
+  --content-lgray: #2a2d2f;
+  --pbutton: #006600;
+  --sbutton: #000000;
+}
+
+/* Center login form */
+main.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Login form wrapper */
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 500px;
+  height: 440px;
+  background: var(--main-dgray);
+  border-radius: 1rem;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  transition: height 0.2s ease;
+}
+
+/* Change wrapper height when active */
+.wrapper.active {
+  height: 520px;
+}
+
+/* Login form size */
+.wrapper .form-box {
+  width: 100%;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+/* Login form */
+.wrapper .form-box.login {
+  transition: transform 0.18s ease;
+  transform: translateX(0);
+}
+
+/* Move login off form */
+.wrapper.active .form-box.login {
+  transition: none;
+  transform: translateX(-600px);
+}
+
+/* Register form */
+.wrapper .form-box.register {
+  position: absolute;
+  transition: none;
+  transform: translateX(600px);
+}
+
+/* Move register onto form */
+.wrapper.active .form-box.register {
+  transition: transform 0.18s ease;
+  transform: translateX(0);
+}
+
+/* Login form title */
+.form-box h2 {
+  font-size: 2em;
+  color: var(--text-color);
+  text-align: center;
+}
+
+/* Login form inputs */
+.input-box {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  border-bottom: 2px solid var(--accent-color);
+  margin: 30px 0;
+}
+
+/* Input lables */
+.input-box label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  font-size: 1em;
+  color: var(--text-color);
+  font-weight: 500;
+  pointer-events: none;
+  transition: 0.2s ease;
+}
+
+/* Input on focus */
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+  top: -5px;
+}
+
+/* Input styling */
+.input-box input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  color: var(--text-color);
+  font-weight: 600;
+  padding: 0 35px 0 5px;
+}
+
+/* Input icon */
+.input-box .icon {
+  position: absolute;
+  right: 8px;
+  font-size: 1.2em;
+  color: var(--text-color);
+  line-height: 57px;
+}
+
+/* Remember me/forgot pass styling */
+.remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9em;
+  color: var(--text-color);
+  font-weight: 500;
+  margin: -15px 0 15px;
+}
+
+/* Tick box styling */
+.remember-forgot label input {
+  accent-color: var(--accent-color);
+  margin-right: 3px;
+}
+
+/* Forgot pass styling */
+.remember-forgot a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+/* Forgot pass on hover */
+.remember-forgot a:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+/* T&C underline */
+.remember-forgot a.TaC {
+  text-decoration: underline;
+}
+
+/* Login button */
+.btn {
+  background-color: var(--accent-color);
+  /* background-color: var(--pbutton); */
+  color: var(--text-color);
+  width: 100%;
+  height: 45px;
+  border-radius: 6px;
+  font-size: 1em;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+/* Login */
+.login-register .btn {
+  background: transparent;
+}
+
+/* Link button on hover */
+.btn:hover {
+  background-color: var(--sbutton);
+}
+
+/* Register link */
+.login-register {
+  font-size: 0.9em;
+  color: var(--text-color);
+  text-align: center;
+  font-weight: 500;
+  margin: 25px 0 10px;
+}
+
+/* Register link styling */
+.login-register button a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 600;
+}

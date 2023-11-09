@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="keywords" content="Humble Home Network" />
+  <meta name="description" content="A Humble Home Network" />
+  <link rel="icon" type="image/x-icon" href="/images/hhn3.png" />
+  <title>Humble Home Network</title>
+</head>
+<!-- Stylesheets -->
+<!-- General CSS -->
+<link rel="stylesheet" href="/css/general.css" />
+<!-- Nav CSS -->
+<link rel="stylesheet" href="/css/nav.css" />
+<!-- Scrollbar CSS -->
+<link rel="stylesheet" href="/css/scrollbar.css" />
+<!-- Login CSS -->
+<link rel="stylesheet" href="/css/login.css" />
+<!-- Responsive Layout -->
+<link rel="stylesheet" href="/css/responsive.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" />
+
+<body>
+  <!-- Header -->
+  <header class="header flex-container-header">
+    <div class="flex-container-header">
+      <button class="nav-btn" type="button">
+        <span id="one" onclick="closeNav()">
+          <ion-icon name="menu-outline" size="large"></ion-icon>
+        </span>
+        <span id="two" onclick="openNav()">
+          <ion-icon name="menu-outline" size="large"></ion-icon>
+        </span>
+      </button>
+      <div>
+        <a href="/index.html">
+          <img class="title" src="/images/logo512.png" alt="logo512.png" />
+        </a>
+      </div>
+    </div>
+    <a href="#" class="account"><ion-icon name="person-circle-outline"></ion-icon></a>
+  </header>
+
+  <!-- Navbar -->
+  <nav class="nav" id="nav">
+    <div class="nav-links-container">
+      <!-- Nav links -->
+      <!-- Home -->
+      <a href="/index.html" class="nav-link">
+        <span class="nav-text">Home</span>
+        <ion-icon name="home-outline" size="large"></ion-icon>
+      </a>
+
+      <!-- Dashboard -->
+      <a href="/pages/dashboard.html" class="nav-link active">
+        <span class="nav-text">Dashboard</span>
+        <ion-icon name="home-outline" size="large"></ion-icon>
+      </a>
+
+      <!-- Server Manager -->
+      <button class="nav-link dropdown-btn">
+        <span class="nav-text">Server Manager</span>
+        <ion-icon name="play-outline" class="caret-down" size="large"></ion-icon>
+      </button>
+      <!-- Dropdown content -->
+      <div class="dropdown-container">
+        <a href="/pages/srvmngr.html" class="nav-link">
+          <span class="dropdown-text">Server Manager</span>
+        </a>
+        <a href="https://panel.famlam.ca/server/1b842505" target="_blank" class="nav-link">
+          <span class="dropdown-text">Proxy</span>
+        </a>
+        <a href="https://panel.famlam.ca/server/02afe139" target="_blank" class="nav-link">
+          <span class="dropdown-text">Lobby</span>
+        </a>
+        <a href="https://panel.famlam.ca/server/368eb337" target="_blank" class="nav-link">
+          <span class="dropdown-text">1.18 Madness</span>
+        </a>
+        <a href="https://panel.famlam.ca/server/204eb6b2" target="_blank" class="nav-link">
+        <span class="dropdown-text">Creative</span>
+        </a>
+        <a href="https://panel.famlam.ca/server/40a02576" target="_blank" class="nav-link">
+        <span class="dropdown-text">Vanilla</span>
+        </a>
+      </div>
+
+      <!-- Nav footer -->
+      <div class="nav-footer">
+        <!-- Login -->
+        <a href="#" class="nav-link loginbtn" id="loginbtn">
+          <span class="nav-text">Login</span>
+          <ion-icon name="log-in-outline" size="large"></ion-icon>
+        </a>
+        <div class="nav-footer-line">
+          <span class="nav-footer-text">Welcome, Enjoy Your Stay!</span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main content -->
+  <main class="main" id="main">
+    <!-- Row -->
+    <div class="row">
+      <!-- Left column -->
+      <div class="left-column">
+        <!-- Network Server Links Card -->
+        <div class="card">
+          <h2>Network Server Links</h2>
+          <div class="row-content">
+            <a href="https://192.168.1.10:8006/" target="_blank">
+              <div class="img-wrapper">
+                <img src="/images/proxmox.png" alt="proxmox.png" />
+              </div>
+              <button type="button">Visit Proxmox</button>
+            </a>
+            <a href="http://192.168.1.23/" target="_blank">
+              <div class="img-wrapper">
+                <img src="/images/TrueNAS.png" alt="TrueNAS.png" />
+              </div>
+              <button type="button">Visit TrueNAS</button>
+            </a>
+            <a href="#" target="_blank">
+              <div class="img-wrapper">
+                <img src="/images/websrv.png" alt="websrv.png" />
+              </div>
+              <button type="button">Visit WebSrv</button>
+            </a>
+            <a href="#" target="_blank">
+              <div class="img-wrapper">
+                <img src="/images/mailsrv.png" alt="mailsrv.png" />
+              </div>
+              <button type="button">Visit MailSrv</button>
+            </a>
+          </div>
+        </div>
+        <!-- Game Server Links Card -->
+        <div class="card">
+          <h2>Game Server Links</h2>
+          <p>Minecraft Server IP: mc.famlam.ca</p>
+          <div class="row-content">
+            <a href="https://panel.famlam.ca/server/de9fd2f4" target="_blank">
+              <div class="img-wrapper">
+                <img src="/images/velocity.png" alt="velocity.png" />
+              </div>
+              <button type="button">Visit Proxy</button>
+            </a>
+            <a href="https://panel.famlam.ca/server/5e8474da" target="_blank">
+              <div class="img-wrapper">
+                <img src="/images/lobby.png" alt="lobby.png" />
+              </div>
+              <button type="button">Visit Lobby</button>
+            </a>
+            <a href="https://panel.famlam.ca/server/316180fe" target="_blank">
+              <div class="img-wrapper">
+                <img src="/images/118madness.png" alt="118madness.png" />
+              </div>
+              <button type="button">Visit 1.18 Madness</button>
+            </a>
+            <a href="https://panel.famlam.ca/server/88a43603" target="_blank">
+              <div class="img-wrapper">
+                <img src="/images/creative.png" alt="creative.png" />
+              </div>
+              <button type="button">Visit Creative</button>
+            </a>
+          </div>
+        </div>
+        <!-- Remote Desktop Card -->
+        <div class="card">
+          <h2>Remote Desktop</h2>
+          <div class="row-content">
+            <a href="#">
+              <div class="img-wrapper">
+                <img src="/images/DNS.png" alt="Remote-Desktop.png" />
+              </div>
+              <button type="button">Visit DNS</button>
+            </a>
+            <a href="#">
+              <div class="img-wrapper">
+                <img src="/images/PrintSrv.png" alt="Remote-Desktop.png" />
+              </div>
+              <button type="button">Visit PrintSrv</button>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right column -->
+      <div class="right-column">
+        <!-- Network Server State Card -->
+        <div class="card">
+          <h2>Network Server State</h2>
+          <div class="row-content">
+            <p>Somehow configure to view the status of proxmox servers</p>
+          </div>
+        </div>
+
+        <!-- Game Server State Card -->
+        <div class="card">
+          <h2>Game Server State</h2>
+          <div class="row-content">
+            <p>Somehow configure to view the status of proxmox servers</p>
+          </div>
+        </div>
+
+        <!-- Remote Access Configs Card -->
+        <div class="card">
+          <h3>Remote Access Configs</h3>
+          <div class="row-content configs">
+            <a href="/configs/putty.reg" download="">
+              <div class="img-wrapper">
+                <img src="/images/putty.png" alt="putty.png" />
+              </div>
+              <p class="configs-title">Putty.ini</p>
+              <button type="button">Download</button>
+            </a>
+          </div>
+          <div class="row-content configs">
+            <a href="/configs/WinSCP.ini" download="">
+              <div class="img-wrapper">
+                <img src="/images/WinSCP.png" alt="inSCP.png" />
+              </div>
+              <p class="configs-title">WinSCP.reg</p>
+              <button type="button">Download</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Scripts -->
+  <!-- Nav toggle -->
+  <script src="/js/nav-toggle.js"></script>
+  <!-- Nav Dropdown -->
+  <script src="/js/nav-dropdown.js"></script>
+  <!-- Ionicon Script -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" nomodule
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

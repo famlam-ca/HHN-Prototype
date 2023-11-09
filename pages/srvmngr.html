@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="keywords" content="Humble Home Network" />
+  <meta name="description" content="A Humble Home Network" />
+  <link rel="icon" type="image/x-icon" href="/images/hhn3.png" />
+  <title>Humble Home Network</title>
+</head>
+<!-- Stylesheets -->
+<!-- General CSS -->
+<link rel="stylesheet" href="/css/general.css" />
+<!-- Nav CSS -->
+<link rel="stylesheet" href="/css/nav.css" />
+<!-- Scrollbar CSS -->
+<link rel="stylesheet" href="/css/scrollbar.css" />
+<!-- Login CSS -->
+<link rel="stylesheet" href="/css/login.css" />
+<!-- Responsive Layout -->
+<link rel="stylesheet" href="/css/responsive.css" />
+
+<body>
+  <!-- Header -->
+  <header class="header flex-container-header">
+    <div class="flex-container-header">
+      <button class="nav-btn" type="button">
+        <span id="one" onclick="closeNav()">
+          <ion-icon name="menu-outline" size="large"></ion-icon>
+        </span>
+        <span id="two" onclick="openNav()">
+          <ion-icon name="menu-outline" size="large"></ion-icon>
+        </span>
+      </button>
+      <div>
+        <a href="/index.html">
+          <img class="title" src="/images/logo512.png" alt="logo512.png" />
+        </a>
+      </div>
+    </div>
+    <a href="#" class="account"><ion-icon name="person-circle-outline"></ion-icon></a>
+  </header>
+
+  <!-- Navbar -->
+  <nav class="nav" id="nav">
+    <div class="nav-links-container">
+      <!-- Nav links -->
+      <!-- Home -->
+      <a href="/index.html" class="nav-link">
+        <span class="nav-text">Home</span>
+        <ion-icon name="home-outline" size="large"></ion-icon>
+      </a>
+
+      <!-- Dashboard -->
+      <a href="/pages/dashboard.html" class="nav-link">
+        <span class="nav-text">Dashboard</span>
+        <ion-icon name="home-outline" size="large"></ion-icon>
+      </a>
+
+      <!-- Server Manager -->
+      <button class="nav-link dropdown-btn active">
+        <span class="nav-text">Server Manager</span>
+        <ion-icon name="play-outline" class="caret-down" size="large"></ion-icon>
+      </button>
+      <!-- Dropdown content -->
+      <div class="dropdown-container">
+        <a href="/pages/srvmngr.html" class="nav-link">
+          <span class="dropdown-text">Server Manager</span>
+        </a>
+        <a href="https://panel.famlam.ca/server/1b842505" target="_blank" class="nav-link">
+          <span class="dropdown-text">Proxy</span>
+        </a>
+        <a href="https://panel.famlam.ca/server/02afe139" target="_blank" class="nav-link">
+          <span class="dropdown-text">Lobby</span>
+        </a>
+        <a href="https://panel.famlam.ca/server/368eb337" target="_blank" class="nav-link">
+          <span class="dropdown-text">1.18 Madness</span>
+        </a>
+        <a href="https://panel.famlam.ca/server/204eb6b2" target="_blank" class="nav-link">
+        <span class="dropdown-text">Creative</span>
+        </a>
+        <a href="https://panel.famlam.ca/server/40a02576" target="_blank" class="nav-link">
+        <span class="dropdown-text">Vanilla</span>
+        </a>
+      </div>
+
+      <!-- Nav footer -->
+      <div class="nav-footer">
+        <!-- Login -->
+        <a href="#" class="nav-link loginbtn" id="loginbtn">
+          <span class="nav-text">Login</span>
+          <ion-icon name="log-in-outline" size="large"></ion-icon>
+        </a>
+        <div class="nav-footer-line">
+          <span class="nav-footer-text">Welcome, Enjoy Your Stay!</span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main content -->
+  <main class="main" id="main">
+    <iframe class="srvmngr" src="http://panel.famlam.ca"> </iframe>
+  </main>
+
+  <!-- Scripts -->
+  <!-- Nav toggle -->
+  <script src="/js/nav-toggle.js"></script>
+  <!-- Nav Dropdown -->
+  <script src="/js/nav-dropdown.js"></script>
+  <!-- Ionicon Script -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" nomodule
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

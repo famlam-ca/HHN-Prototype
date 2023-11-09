@@ -1,0 +1,165 @@
+/* Colors */
+:root {
+  --text-color: #e8e6e3;
+  --accent-color: #82c3fd;
+  --main-dgray: #0b0c0d;
+  --bg-gray: #181a1b;
+  --content-lgray: #2a2d2f;
+  --pbutton: #006600;
+  --sbutton: #000000;
+}
+
+/* Nav btn */
+.nav-btn {
+  color: var(--text-color);
+  margin-left: 1.5625rem;
+  border-radius: 6.25rem;
+}
+
+/* Nav btn on hover */
+.nav-btn:hover {
+  background-color: var(--bg-gray);
+  transition: box-shadow 0.3s ease;
+  box-shadow: 0 0 1rem rgba(42, 45, 47, 1);
+}
+
+/* Fixed sidenav, full height */
+.nav {
+  background: var(--main-dgray);
+  width: 18rem;
+  position: fixed;
+  top: 6.7rem;
+  height: 100vh;
+  max-height: calc(100% - 6.7rem);
+  z-index: 999;
+  overflow-x: hidden;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  transition: 0.3s ease;
+  white-space: nowrap;
+}
+
+/* Nav links container */
+.nav-links-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Nav Links */
+.nav-link,
+.dropdown-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 18px 13px;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+/* Login to bottom */
+.nav-link.loginbtn {
+  position: relative;
+}
+
+/* Nav link animation */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 100%;
+  bottom: 0;
+  background-color: var(--bg-gray);
+  transition: all 0.2s ease;
+}
+
+/* Nav link on hover */
+.nav-link:hover,
+.dropdown-btn:hover {
+  transition: box-shadow 0.2s ease;
+  box-shadow: 0 0 1rem rgba(42, 45, 47, 1);
+  border-radius: 0.5rem;
+  background-position: 0 -100%;
+  transition: all 0.2s ease;
+}
+
+/* Navlink animation hover */
+.nav-link:hover::after {
+  border-radius: 0.5rem;
+  right: 0;
+  transition: all 0.2s ease;
+}
+
+/* Nav link when active */
+.nav-link.active {
+  background: var(--accent-color);
+  background-size: 100%;
+  border-radius: 0.5rem;
+}
+
+/* Nav link on hover when active */
+.nav-link.active:hover {
+  border-radius: 0.5rem;
+  box-shadow: 0 0 1rem rgba(2, 55, 124, 1);
+}
+
+/* Nav text */
+.nav-text {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+/* Dropdown container */
+.dropdown-container {
+  display: none;
+  padding-bottom: 20px;
+  transition: all 0.2s ease;
+}
+
+/* Dropdown text */
+.dropdown-text {
+  font-size: 18px;
+  padding-left: 12px;
+}
+
+/* Dropdown btn when active */
+.dropdown-btn.dropdown-active {
+  background: var(--sbutton);
+}
+
+/* Dropdown btn on hover when active */
+.dropdown-btn.dropdown-active:hover {
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 1);
+}
+
+/* Dropdown caret */
+.caret-down {
+  transform: rotate(180deg);
+  transition: all 0.2s ease;
+}
+
+/* Dropdown caret when active */
+.dropdown-btn.dropdown-active .caret-down {
+  transform: rotate(90deg);
+}
+
+/* Nav footer */
+.nav-footer {
+  color: var(--text-color);
+  margin-top: auto;
+}
+
+/* Accent line for footer */
+.nav-footer-line {
+  border-top: 3px solid var(--accent-color);
+  padding: 18px 13px;
+}
+
+/* Footer text */
+.nav-footer-text {
+  font-size: 15px;
+}
